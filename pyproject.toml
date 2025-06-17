@@ -15,6 +15,9 @@ dependencies = [
   "markdown-it-py",
 ]
 
+[project.urls]
+Homepage = "https://github.com/elijahgreenstein/headingmd"
+
 [project.optional-dependencies]
 testing = [
   "pytest",
