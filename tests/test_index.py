@@ -73,6 +73,18 @@ def test_convert_paragraph(md):
     assert htokens == ptokens
 
 
+def test_validate():
+    """Check validation of values."""
+    with pytest.raises(TypeError):
+        MarkdownIt().use(headingmd_plugin, shift=1.0)
+    with pytest.raises(TypeError):
+        MarkdownIt().use(headingmd_plugin, shift="1")
+    with pytest.raises(TypeError):
+        MarkdownIt().use(headingmd_plugin, hmin=1.0)
+    with pytest.raises(TypeError):
+        MarkdownIt().use(headingmd_plugin, hmax=1.0)
+
+
 def test_headingmd(headings, hshift1, hshift_1, hselect):
     """Test plugin."""
     md_up = MarkdownIt().use(headingmd_plugin, 1)

@@ -43,10 +43,20 @@ def convert_paragraph(tokens: list[Token], idx: int) -> None:
     tokens[idx].markup = ""
 
 
+def validate(shift: int, hmin: int, hmax: int) -> None:
+    """Raise error if shift, hmin, and hmax are not integers."""
+    for param, name in zip([shift, hmin, hmax], ["shift", "hmin", "hmax"]):
+        if not isinstance(param, int):
+            raise TypeError(
+                f"Parameter {name} must be an integer; argument passed: {param}."
+            )
+
+
 def headingmd_plugin(
     md: MarkdownIt, shift: int = 1, hmin: int = 1, hmax: int = 6
 ) -> None:
     """Add ``headingmd`` function to the MarkdownIt instance."""
+    validate(shift, hmin, hmax)
 
     def headingmd(state: StateCore):
         """Shift heading levels."""
