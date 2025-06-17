@@ -44,7 +44,7 @@ The parser renders the level-one Markdown heading into HTML with `h2` HTML tags:
 
 ### Increase heading levels
 
-Pass an argument to the `shift` parameter to specify how much to shift the heading levels. For example, to shift headings up two levels (`<h1>` HTML tags become `<h3>` tags):
+Pass an argument to the `shift` parameter to specify how many levels to increase each heading. For example, to shift headings up two levels (`<h1>` HTML tags become `<h3>` tags):
 
 ```python
 md = MarkdownIt().use(headingmd_plugin, shift=2)
