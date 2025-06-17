@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools >= 75.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "headingmd"
+version = "0.1.0"
+authors = [ { name="Elijah Greenstein" } ]
+description = "Markdown-It-Py plugin extension to shift heading levels up or down."
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+dependencies = [
+  "markdown-it-py",
+]
+
+[project.optional-dependencies]
+testing = [
+  "pytest",
+]
